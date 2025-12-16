@@ -41,7 +41,7 @@ export default function Contact() {
               width="100%"
               height="100%"
               style={{ border: 0, borderRadius: '15px' }}
-              allowFullScreen=""
+              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
