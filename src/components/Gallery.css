@@ -1,0 +1,117 @@
+.gallery {
+  padding: 5rem 2rem;
+  background: 
+    url('/images/gallery/angelica.png') center / 40% no-repeat,
+    linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-title {
+  font-size: 2.8rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.gallery-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.gallery-item:nth-child(2n) .gallery-image {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gallery-item:nth-child(3n) .gallery-image {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.gallery-item:nth-child(4n) .gallery-image {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.15) rotate(8deg);
+  animation: heartbeat 0.6s ease-in-out;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-text {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    padding: 3rem 1rem;
+  }
+
+  .gallery-title {
+    font-size: 2rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .gallery-image {
+    font-size: 2.5rem;
+  }
+}
